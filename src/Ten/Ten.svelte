@@ -1,0 +1,76 @@
+<script>
+  import { quintOut, linear } from "svelte/easing";
+  import { fade, fly } from "svelte/transition";
+  let js = "images/js.png"
+  // duration
+  let du = 1000;
+  // delay
+  let lay1 = 500;
+  let startAnim = false;
+</script>
+
+<style>
+  .startAnim {
+    animation: anim1 1.2s linear infinite alternate forwards;
+  }
+
+  @keyframes anim1 {
+    from {
+      transform: translateY(0%);
+    }
+    to {
+      transform: translateY(20%);
+    }
+  }
+  img {
+    margin-left: 40px;
+  }
+</style>
+
+<svg
+  width="582"
+  height="336"
+  viewBox="0 0 582 336"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg">
+  <g id="hard" out:fly={{ y: 200, duration: 1500, easing: linear }}>
+    <g id="sad" in:fade={{ duration: 500, delay: lay1 }}
+    >
+      <circle id="Ellipse 13" cx="134.5" cy="143.5" r="134.5" fill="#D3B82A" />
+      <path
+        id="Subtract"
+        fill-rule="evenodd"
+        clip-rule="evenodd"
+        d="M111.277 249.464C191.359 249.464 256.277 184.545 256.277
+        104.464C256.277 97.171 255.739 90.0038 254.7 83C264.021 101.3 269.277
+        122.018 269.277 143.964C269.277 218.246 209.06 278.464 134.777
+        278.464C88.8291 278.464 48.2622 255.423 24 220.266C48.2815 238.595
+        78.5101 249.464 111.277 249.464Z"
+        fill="#AB9109" />
+      <ellipse id="Ellipse 14" cx="77" cy="104" rx="16" ry="31" fill="black" />
+      <ellipse id="Ellipse 15" cx="193" cy="104" rx="16" ry="31" fill="black" />
+      <path
+        id="Rectangle 26"
+        d="M217 200.608C217 211.796 202.828 217.522 193.986 210.666C151.664
+        177.847 111.73 182.363 76.1764 210.097C67.3403 216.99 53 211.294 53
+        200.087V200.087C53 196.1 54.9694 192.335 58.2646 190.091C124.622 144.9
+        149.187 152.534 211.118 190.135C214.773 192.354 217 196.332 217
+        200.608V200.608Z"
+        fill="black" />
+    </g>
+    <path
+      id="Arrow 5"
+      in:fade={{ duration: 500, delay: lay1 }}
+      on:introend={() => (startAnim = true)}
+      class:startAnim
+      d="M440.626 330.374C447.46 337.209 458.54 337.209 465.374 330.374L576.744
+      219.005C583.578 212.171 583.578 201.09 576.744 194.256C569.91 187.422
+      558.829 187.422 551.995 194.256L453 293.251L354.005 194.256C347.171
+      187.422 336.09 187.422 329.256 194.256C322.422 201.09 322.422 212.171
+      329.256 219.005L440.626 330.374ZM435.5 2.08685e-07L435.5 318L470.5
+      318L470.5 -2.08685e-07L435.5 2.08685e-07Z"
+      fill="#E80101" />
+  </g>
+</svg>
+
+<img src={js} alt="" in:fade={{ duration: 500, delay: lay1 }} out:fly={{ y: 200, duration: 1500, easing: linear }}/>
