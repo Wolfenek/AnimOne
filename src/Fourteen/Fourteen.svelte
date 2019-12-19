@@ -81,7 +81,7 @@
     <g
       id="purple"
       class={startAnim === true ? 'goDown' : ''}
-      in:fly={{ x: -100, duration: du, easing: backOut }}>
+      in:fly={{ x: -100, duration: du, delay: 500, easing: backOut }}>
       <circle
         id="Ellipse 22"
         cx="134.5"

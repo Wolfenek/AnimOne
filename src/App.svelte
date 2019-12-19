@@ -25,21 +25,21 @@
     await wait(1500);
   }
   async function handleMouseDown() {
-    // await nextScene(8000, 1);
-    // await nextScene(15000, 2);
-    // await nextScene(8000, 3);
-    // await nextScene(8000, 4);
-    // await nextScene(8000, 5);
-    // await nextScene(8000, 6);
-    // await nextScene(8000, 7);
-    // await nextScene(8000, 8);
-    // await nextScene(8000, 9);
-    // await nextScene(8000, 10);
-    // await nextScene(8000, 11);
-    // await nextScene(12000, 12);
-    // await nextScene(12000, 13);
-    // await nextScene(12000, 14);
-    await nextScene(16000, 15);
+    await nextScene(19000, 1);
+    await nextScene(15000, 2);
+    await nextScene(14000, 3);
+    await nextScene(10000, 4);
+    await nextScene(12000, 5);
+    await nextScene(8000, 6);
+    await nextScene(25000, 7);
+    await nextScene(18000, 8);
+    await nextScene(25000, 9);
+    await nextScene(9000, 10);
+    await nextScene(11000, 11);
+    await nextScene(14000, 12);
+    await nextScene(34000, 13);
+    await nextScene(29000, 14);
+    await nextScene(30000, 15);
   }
 </script>
 
@@ -59,13 +59,14 @@
         transparent 81px
       ),
       linear-gradient(#eee 0.1em, transparent 0.1em);
+    /* background: linear-gradient(180deg, #048CBA 0%, #FFFFCC 100%); */
     background-size: 100% 1.2em;
     overflow-x: hidden;
     overflow-y: hidden;
   }
 </style>
 
-<svelte:window on:mousedown={handleMouseDown} />
+<svelte:window on:wheel={handleMouseDown} />
 
 <div class="wrapper">
   {#if scene === 1}
